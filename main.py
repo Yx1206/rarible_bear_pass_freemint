@@ -17,14 +17,14 @@ def mint_bear(private_key):
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
     # 部署的合约地址
-    contract_address = '0x8E0DCCa4E6587d2028ed948b7285791269059a62' 
+    contract_address = '0x141A1fb33683C304DA7C3fe6fC6a49B5C0c2dC42' 
 
     with open('rbear_abi.json', 'r') as f:
         # 从abi_usdc.json文件中读取abi
         rbear_abi = json.load(f)
 
     # 连接到合约接口
-    contract = w3.eth.contract(address=contract_address, abi=rbear_abi)  
+    contract = w3.eth.contract(address=contract_address, abi=Pandra_abi)  
 
     balance = w3.eth.get_balance(account_from['address'])
     print("账户余额: ", balance)
